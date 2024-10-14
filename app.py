@@ -102,8 +102,8 @@ def create_app(db_url=None):
     # @app.before_first_request  #3.0.3 resapi ko còn hàm này
     # def create_table():
     #     db.create_all()
-    # with app.app_context():  # chỉ chạy 1 lần 
-    #     db.create_all()
+    with app.app_context():  # chỉ chạy 1 lần 
+        db.create_all()
     api.register_blueprint(ItemBlueprint)
     api.register_blueprint(StoreBlueprint)
     app.register_blueprint(TagBlueprint)
