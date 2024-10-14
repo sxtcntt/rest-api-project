@@ -1,0 +1,8 @@
+flask
+flask-smorest
+python-dotenv
+sqlalchemy
+flask-sqlalchemy
+flask-jwt-extended
+passlib # user để hash mật khẩu => làm cho (người) ko thể đọc được khi đưa chúng vào csdl
+flask-migrate
