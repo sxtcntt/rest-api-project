@@ -110,5 +110,3 @@ def create_app(db_url=None):
     app.register_blueprint(UserBlueprint)
 
     return app
-
-

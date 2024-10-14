@@ -1,4 +1,5 @@
 from flask_smorest import Blueprint, abort
+from flask_jwt_extended import jwt_required, get_jwt
 from flask.views import MethodView
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 from models import StoreModel
@@ -16,6 +17,7 @@ class Store(MethodView):
     def get(self, store_id):
         return StoreModel.query.get_or_404(store_id)
 
+    @jwt_required(fresh=True)
     def delete(self, store_id):
         store_delete = StoreModel.query.get_or_404(store_id) 
         try:
@@ -34,6 +36,7 @@ class StoreList(MethodView):
         except SQLAlchemyError as e:
             abort(404, message=f"Error: {e}")
 
+    @jwt_required(fresh=True)
     @blp.arguments(StoreSchema)
     @blp.response(201, StoreSchema)
     def post(self, store_data):
