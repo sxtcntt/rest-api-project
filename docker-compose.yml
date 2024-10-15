@@ -13,8 +13,8 @@ services:
   db:
     image: postgres
     environment:
-      - POSTGRES_PASSWORD=WNNz7sKCaPl3xFpBYkZVKPzCGqxoxV2O
-      - POSTGRES_DB=data_ussl
+      - POSTGRES_PASSWORD=V6SBxaZHZ4fvbHvVw1rbc97RXW8QnHZ2
+      - POSTGRES_DB=db_api_oxqg
     volumes:
       - postgres_data:/var/lib/postgresql/data
 volumes:

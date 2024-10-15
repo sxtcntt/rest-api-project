@@ -51,3 +51,7 @@ class UserSchema(Schema):
     username = fields.Str(required=True)
     password = fields.Str(required=True, load_only=True)  # load_only => ko tra về tới máy khách
 
+
+class UserregisterSchema(UserSchema):
+    email = fields.Str(required=True)
+
